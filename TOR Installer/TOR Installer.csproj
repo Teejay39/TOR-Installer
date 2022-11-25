@@ -7,6 +7,13 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>au.ico</ApplicationIcon>
+    <RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+    <PublishSingleFile>true</PublishSingleFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="au.ico" />
+  </ItemGroup>
 
 </Project>
