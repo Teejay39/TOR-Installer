@@ -1,6 +1,8 @@
 #  TOR Installer
 A small application that creates a copy from Among Us and installs the Among Us mod [The Other Roles](https://github.com/TheOtherRolesAU/TheOtherRoles) to the copy.
 
+![TOR Installer](TOR_Installer.png?raw=true "TOR Installer")
+
 ## 	How to use
 1. Download the zip folder
 2. Run the .exe in the zip folder (with the Among Us Icon)
