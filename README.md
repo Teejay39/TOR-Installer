@@ -4,7 +4,7 @@ A small application that creates a copy from Among Us and installs the Among Us 
 ![TOR Installer](TOR_Installer.png?raw=true "TOR Installer")
 
 ## 	How to use
-1. Download and run the [TOR_Installer.exe](https://github.com/Teejay39/TOR-Installer/releases/latest/TOR_Installer.exe) file
+1. Download and run the [TOR_Installer.exe](github.com/Teejay39/TOR-Installer/releases/latest/download/TOR_Installer.exe) file
 2. Choose the path to Among Us
 3. Choose the path to an empty folder (for example: create an folder named 'The Other Roles' in your games folder (if you have one))
 4. Start the installation
