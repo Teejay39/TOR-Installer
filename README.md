@@ -1,9 +1,9 @@
 ![GitHub all releases](https://img.shields.io/github/downloads/Teejay39/total?color=%20%2332CD32&style=plastic)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/Teejay39/TOR-Installer?style=plastic)
-#  :hammer_and_wrench:Modinstaller
+#  TOR Installer
 A small application that creates a copy from Among Us and installs the Among Us mod [The Other Roles](https://github.com/TheOtherRolesAU/TheOtherRoles) to the copy.
 
-## 	:gear:How to use
+## 	How to use
 1. Download the zip folder
 2. Run the .exe in the zip folder (with the Among Us Icon)
 3. Choose the path to Among Us
