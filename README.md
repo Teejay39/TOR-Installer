@@ -1,5 +1,3 @@
-![GitHub all releases](https://img.shields.io/github/downloads/Teejay39/total?color=%20%2332CD32&style=plastic)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Teejay39/TOR-Installer?style=plastic)
 #  TOR Installer
 A small application that creates a copy from Among Us and installs the Among Us mod [The Other Roles](https://github.com/TheOtherRolesAU/TheOtherRoles) to the copy.
 
