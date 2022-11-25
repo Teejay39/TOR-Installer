@@ -41,6 +41,7 @@ namespace TOR_Installer
             this.error_install = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.MovePanel = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@ namespace TOR_Installer
             this.error_pfad.AutoSize = true;
             this.error_pfad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.error_pfad.ForeColor = System.Drawing.Color.Red;
-            this.error_pfad.Location = new System.Drawing.Point(304, 158);
+            this.error_pfad.Location = new System.Drawing.Point(304, 164);
             this.error_pfad.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.error_pfad.Name = "error_pfad";
             this.error_pfad.Size = new System.Drawing.Size(79, 19);
@@ -88,7 +89,7 @@ namespace TOR_Installer
             this.error_tor_path.AutoSize = true;
             this.error_tor_path.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.error_tor_path.ForeColor = System.Drawing.Color.Red;
-            this.error_tor_path.Location = new System.Drawing.Point(304, 208);
+            this.error_tor_path.Location = new System.Drawing.Point(304, 214);
             this.error_tor_path.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.error_tor_path.Name = "error_tor_path";
             this.error_tor_path.Size = new System.Drawing.Size(79, 19);
@@ -184,12 +185,26 @@ namespace TOR_Installer
             this.MovePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseMove);
             this.MovePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseUp);
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button5.Location = new System.Drawing.Point(164, 370);
+            this.button5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(280, 41);
+            this.button5.TabIndex = 16;
+            this.button5.Text = "Spiel starten";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(638, 513);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.MovePanel);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.error_install);
@@ -227,6 +242,7 @@ namespace TOR_Installer
         private System.Windows.Forms.Label error_install;
         private Button button4;
         private Panel MovePanel;
+        private Button button5;
     }
 }
 
