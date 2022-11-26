@@ -30,46 +30,48 @@ namespace TOR_Installer
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tor_logo = new System.Windows.Forms.PictureBox();
+            this.au_path = new System.Windows.Forms.Button();
             this.error_pfad = new System.Windows.Forms.Label();
             this.error_tor_path = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tor_path = new System.Windows.Forms.Button();
             this.DownloadBar = new System.Windows.Forms.ProgressBar();
             this.status = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.start_install = new System.Windows.Forms.Button();
             this.error_install = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.close_btn = new System.Windows.Forms.Button();
             this.MovePanel = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.start_game = new System.Windows.Forms.Button();
+            this.tddc_logo = new System.Windows.Forms.PictureBox();
+            this.tddc_text = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tor_logo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tddc_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // tor_logo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(370, 91);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.tor_logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tor_logo.Image = ((System.Drawing.Image)(resources.GetObject("tor_logo.Image")));
+            this.tor_logo.Location = new System.Drawing.Point(16, 18);
+            this.tor_logo.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tor_logo.Name = "tor_logo";
+            this.tor_logo.Size = new System.Drawing.Size(370, 91);
+            this.tor_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.tor_logo.TabIndex = 0;
+            this.tor_logo.TabStop = false;
+            this.tor_logo.Click += new System.EventHandler(this.tor_logo_Click);
             // 
-            // button1
+            // au_path
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(16, 153);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(280, 41);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Pfad zu Among Us auswaehlen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.au_path.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.au_path.Location = new System.Drawing.Point(16, 153);
+            this.au_path.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.au_path.Name = "au_path";
+            this.au_path.Size = new System.Drawing.Size(280, 41);
+            this.au_path.TabIndex = 2;
+            this.au_path.Text = "Pfad zu Among Us auswaehlen";
+            this.au_path.UseVisualStyleBackColor = true;
+            this.au_path.Click += new System.EventHandler(this.au_path_Click);
             // 
             // error_pfad
             // 
@@ -97,17 +99,17 @@ namespace TOR_Installer
             this.error_tor_path.Text = "{{ERROR}}";
             this.error_tor_path.Visible = false;
             // 
-            // button2
+            // tor_path
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(16, 203);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(280, 41);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Wo soll TOR Installiert werden?";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tor_path.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tor_path.Location = new System.Drawing.Point(16, 203);
+            this.tor_path.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.tor_path.Name = "tor_path";
+            this.tor_path.Size = new System.Drawing.Size(280, 41);
+            this.tor_path.TabIndex = 4;
+            this.tor_path.Text = "Wo soll TOR Installiert werden?";
+            this.tor_path.UseVisualStyleBackColor = true;
+            this.tor_path.Click += new System.EventHandler(this.tor_path_Click);
             // 
             // DownloadBar
             // 
@@ -132,17 +134,17 @@ namespace TOR_Installer
             this.status.Text = "{{STATUS}}";
             this.status.Visible = false;
             // 
-            // button3
+            // start_install
             // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(15, 281);
-            this.button3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(280, 41);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Installation Starten";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.start_install.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.start_install.Location = new System.Drawing.Point(15, 281);
+            this.start_install.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.start_install.Name = "start_install";
+            this.start_install.Size = new System.Drawing.Size(280, 41);
+            this.start_install.TabIndex = 12;
+            this.start_install.Text = "Installation Starten";
+            this.start_install.UseVisualStyleBackColor = true;
+            this.start_install.Click += new System.EventHandler(this.start_install_Click);
             // 
             // error_install
             // 
@@ -157,46 +159,72 @@ namespace TOR_Installer
             this.error_install.Text = "{{ERROR}}";
             this.error_install.Visible = false;
             // 
-            // button4
+            // close_btn
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(589, 15);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(35, 51);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "X";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.close_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_btn.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.close_btn.ForeColor = System.Drawing.Color.White;
+            this.close_btn.Location = new System.Drawing.Point(591, 13);
+            this.close_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.close_btn.Name = "close_btn";
+            this.close_btn.Size = new System.Drawing.Size(35, 40);
+            this.close_btn.TabIndex = 14;
+            this.close_btn.Text = "X";
+            this.close_btn.UseVisualStyleBackColor = true;
+            this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
             // MovePanel
             // 
-            this.MovePanel.BackColor = System.Drawing.Color.Transparent;
+            this.MovePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.MovePanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MovePanel.Location = new System.Drawing.Point(-10, -5);
             this.MovePanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MovePanel.Name = "MovePanel";
-            this.MovePanel.Size = new System.Drawing.Size(653, 71);
+            this.MovePanel.Size = new System.Drawing.Size(653, 34);
             this.MovePanel.TabIndex = 15;
             this.MovePanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseDown);
             this.MovePanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseMove);
             this.MovePanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MovePanel_MouseUp);
             // 
-            // button5
+            // start_game
             // 
-            this.button5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button5.Location = new System.Drawing.Point(164, 370);
-            this.button5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(280, 41);
-            this.button5.TabIndex = 16;
-            this.button5.Text = "Spiel starten";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.start_game.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.start_game.Location = new System.Drawing.Point(164, 370);
+            this.start_game.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.start_game.Name = "start_game";
+            this.start_game.Size = new System.Drawing.Size(280, 41);
+            this.start_game.TabIndex = 16;
+            this.start_game.Text = "Spiel starten";
+            this.start_game.UseVisualStyleBackColor = true;
+            this.start_game.Visible = false;
+            this.start_game.Click += new System.EventHandler(this.start_game_Click);
+            // 
+            // tddc_logo
+            // 
+            this.tddc_logo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tddc_logo.Image = ((System.Drawing.Image)(resources.GetObject("tddc_logo.Image")));
+            this.tddc_logo.Location = new System.Drawing.Point(29, 59);
+            this.tddc_logo.Name = "tddc_logo";
+            this.tddc_logo.Size = new System.Drawing.Size(50, 50);
+            this.tddc_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.tddc_logo.TabIndex = 17;
+            this.tddc_logo.TabStop = false;
+            this.tddc_logo.Click += new System.EventHandler(this.tddc_logo_Click);
+            // 
+            // tddc_text
+            // 
+            this.tddc_text.AutoSize = true;
+            this.tddc_text.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tddc_text.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tddc_text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(219)))), ((int)(((byte)(88)))));
+            this.tddc_text.Location = new System.Drawing.Point(80, 90);
+            this.tddc_text.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.tddc_text.Name = "tddc_text";
+            this.tddc_text.Size = new System.Drawing.Size(125, 19);
+            this.tddc_text.TabIndex = 18;
+            this.tddc_text.Text = "Installer by TDDC";
+            this.tddc_text.Click += new System.EventHandler(this.tddc_text_Click);
             // 
             // Form1
             // 
@@ -204,18 +232,20 @@ namespace TOR_Installer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
             this.ClientSize = new System.Drawing.Size(638, 513);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.tddc_text);
+            this.Controls.Add(this.tddc_logo);
+            this.Controls.Add(this.start_game);
             this.Controls.Add(this.MovePanel);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.close_btn);
             this.Controls.Add(this.error_install);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.start_install);
             this.Controls.Add(this.status);
             this.Controls.Add(this.DownloadBar);
             this.Controls.Add(this.error_tor_path);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.tor_path);
             this.Controls.Add(this.error_pfad);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.au_path);
+            this.Controls.Add(this.tor_logo);
             this.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -223,7 +253,8 @@ namespace TOR_Installer
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tor Downloader";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tor_logo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tddc_logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,18 +262,20 @@ namespace TOR_Installer
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox tor_logo;
+        private System.Windows.Forms.Button au_path;
         private System.Windows.Forms.Label error_pfad;
         private System.Windows.Forms.Label error_tor_path;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button tor_path;
         private System.Windows.Forms.ProgressBar DownloadBar;
         private System.Windows.Forms.Label status;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button start_install;
         private System.Windows.Forms.Label error_install;
-        private Button button4;
+        private Button close_btn;
         private Panel MovePanel;
-        private Button button5;
+        private Button start_game;
+        private PictureBox tddc_logo;
+        private Label tddc_text;
     }
 }
 

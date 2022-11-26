@@ -12,6 +12,7 @@ using System.IO.Compression;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Net;
+using System.Diagnostics;
 
 namespace TOR_Installer
 {
@@ -40,13 +41,24 @@ namespace TOR_Installer
         {
             InitializeComponent();
             checkAmong();
-            button4.FlatAppearance.BorderSize = 0;
-            this.Controls.SetChildIndex(MovePanel, 15);
+            close_btn.FlatAppearance.BorderSize = 0;
+            this.Controls.SetChildIndex(close_btn, 0);
+            close_btn.Refresh();
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        void install_error(string error_text)
         {
-
+            error_install.Visible = true;
+            error_install.Text = error_text;
+            error_install.ForeColor = System.Drawing.Color.Red;
+            error_install.Refresh();
+            start_install.Visible = true;
+            start_install.Refresh();
+            status.Visible = false;
+            status.Refresh();
+            DownloadBar.Visible = false;
+            DownloadBar.Refresh();
+            error = true;
         }
 
         void checkAmong()
@@ -57,7 +69,7 @@ namespace TOR_Installer
                 path = amongPath1;
                 error_pfad.Visible = true;
                 error_pfad.Text = "Pfad gesetzt.";
-                error_pfad.ForeColor = System.Drawing.Color.Green;
+                error_pfad.ForeColor = Color.FromArgb(0, 219, 88);
                 error_pfad.Refresh();
             }
             else if (Directory.Exists(amongPath2 + "\\Among Us_Data"))
@@ -66,12 +78,12 @@ namespace TOR_Installer
                 path = amongPath2;
                 error_pfad.Visible = true;
                 error_pfad.Text = "Pfad gesetzt.";
-                error_pfad.ForeColor = System.Drawing.Color.Green;
+                error_pfad.ForeColor = Color.FromArgb(0, 219, 88);
                 error_pfad.Refresh();
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void au_path_Click(object sender, EventArgs e)
         {
             error_pfad.Visible = false;
             error_pfad.Refresh();
@@ -87,7 +99,7 @@ namespace TOR_Installer
                         acceptedpath = true;
                         error_pfad.Visible = true;
                         error_pfad.Text = "Pfad gesetzt.";
-                        error_pfad.ForeColor = System.Drawing.Color.Green;
+                        error_pfad.ForeColor = Color.FromArgb(0, 219, 88);
                         error_pfad.Refresh();
                     }
                     else
@@ -108,7 +120,7 @@ namespace TOR_Installer
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void tor_path_Click(object sender, EventArgs e)
         {
             error_tor_path.Visible = false;
             error_tor_path.Refresh();
@@ -124,7 +136,7 @@ namespace TOR_Installer
                         acceptedclonepath = true;
                         error_tor_path.Visible = true;
                         error_tor_path.Text = "Pfad gesetzt.";
-                        error_tor_path.ForeColor = System.Drawing.Color.Green;
+                        error_tor_path.ForeColor = Color.FromArgb(0, 219, 88);
                         error_tor_path.Refresh();
                     }
                     else
@@ -145,13 +157,13 @@ namespace TOR_Installer
             }
         }
 
-        private async void button3_Click(object sender, EventArgs e)
+        private void start_install_Click(object sender, EventArgs e)
         {
             error_install.Visible = false;
             error_install.Refresh();
             if (acceptedpath == true && acceptedclonepath == true)
             {
-                button3.Visible = false;
+                start_install.Visible = false;
                 startInstall();
             }
             else
@@ -172,12 +184,7 @@ namespace TOR_Installer
             status.ForeColor = System.Drawing.Color.White;
             status.Refresh();
             await CloneVanillaAmongUs();
-            if (error == true)
-            {
-                status.Visible = false;
-                DownloadBar.Visible = false;
-                return;
-            }
+            if (error == true) return;
             status.Text = "The Other Roles wird heruntergeladen...";
             status.ForeColor = System.Drawing.Color.White;
             status.Refresh();
@@ -206,12 +213,8 @@ namespace TOR_Installer
             }
             catch (Exception e)
             {
-                error_install.Visible = true;
-                error_install.Text = "Es ist ein Fehler beim kopieren aufgetreten!";
-                error_install.ForeColor = System.Drawing.Color.Red;
-                error_install.Refresh();
-                button3.Visible = true;
                 error = true;
+                install_error("Es ist ein Fehler beim kopieren aufgetreten!");
             }
         }
 
@@ -257,12 +260,8 @@ namespace TOR_Installer
             }
             catch (Exception e)
             {
-                error_install.Visible = true;
-                error_install.Text = "Es ist ein Fehler beim Downloaden aufgetreten!";
-                error_install.ForeColor = System.Drawing.Color.Red;
-                error_install.Refresh();
-                button3.Visible = true;
                 error = true;
+                install_error("Es ist ein Fehler beim Downloaden aufgetreten!");
             }
         }
 
@@ -277,6 +276,8 @@ namespace TOR_Installer
             {
                 status.Visible = false;
                 DownloadBar.Visible = false;
+                status.Refresh();
+                DownloadBar.Refresh();
                 return;
             }
             try
@@ -293,12 +294,8 @@ namespace TOR_Installer
             }
             catch (Exception r)
             {
-                error_install.Visible = true;
-                error_install.Text = "Es ist ein Fehler beim Entpacken aufgetreten!";
-                error_install.ForeColor = System.Drawing.Color.Red;
-                error_install.Refresh();
-                button3.Visible = true;
                 error = true;
+                install_error("Es ist ein Fehler beim Entpacken aufgetreten!");
             }
         }
 
@@ -308,6 +305,8 @@ namespace TOR_Installer
             {
                 status.Visible = false;
                 DownloadBar.Visible = false;
+                status.Refresh();
+                DownloadBar.Refresh();
                 return;
             }
             status.Text = "Regionen werden geändert...";
@@ -329,15 +328,51 @@ namespace TOR_Installer
             var region = new FileInfo(clonePath + "\\at.duikbo.regioninstall.cfg");
             region.MoveTo(clonePath + "\\BepInEx\\config\\at.duikbo.regioninstall.cfg", true);
             status.Text = "TheOtherRoles in " + clonePath + " installiert!";
-            status.ForeColor = System.Drawing.Color.Green;
+            status.ForeColor = Color.FromArgb(0, 219, 88);
             status.Refresh();
-            button5.Visible = true;
+            start_game.Visible = true;
+            start_game.Refresh();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void start_game_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start($@"{clonePath}" + "\\Among Us.exe");
+            Close();
+        }
+
+        private void tor_logo_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://github.com/Teejay39/TOR-Installer",
+                UseShellExecute = true
+            });
+        }
+
+        private void tddc_logo_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://tddc.eu/",
+                UseShellExecute = true
+            });
+        }
+
+        private void tddc_text_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://tddc.eu/",
+                UseShellExecute = true
+            });
+        }
+
+        private void close_btn_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+        //moveable window
 
         private void MovePanel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -357,32 +392,6 @@ namespace TOR_Installer
         private void MovePanel_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
-        }
-
-        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
-        {
-            mov = 1;
-            movX = e.X;
-            movY = e.Y;
-        }
-
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (mov == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
-            }
-        }
-
-        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            mov = 0;
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start($@"{clonePath}" + "\\Among Us.exe");
-            Close();
         }
     }
 }
